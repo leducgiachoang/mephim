@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <meta http-equiv="Content-Security-Policy" content="">
+  <title>MÊ FIM - LE DUC GIAC HOANG</title>
+  <link rel="shortcut icon"
+    href="https://lh3.googleusercontent.com/5bhVDetJHO4YsSHxbU7Fud4DnrOCAxk25BnAQr3C8FNkhqtZppdPeScdsjRlbGhESgzlzxrskFrHnb6vQiIKzN_kJjqmyvHecAkdVLljPsMFl0YXZf0BDhfPaNP9UGyzb7_KCGYVW9thkVLd5sxsgZ3xbXaVFQklC16CtZ4Cu_R1EY0TQMSQZjUGPRBSi5D9IS_6j8M0Oq0DE7G8hLnIL0hXtLpskqHBGgnpf2ncjUvYeCs2IineRHpyv4YxgWOLuFGYdQMJvU1ydleZreRS3HEROPXZknKh45UPK_U7knF4_ny5LogPFnEVr0BbKix_Eur8xssn1IZDJ2pSIo5h8QktewPfKTy3i3Sl1FHZGoVXWdtrH7M1liTBmOhPQmTF2yqnlIhbxy1Ym5fz30wBD8bSFxu2gLbsxEQrZVqg7tfE7_eiZISy85LQCUIhob46ekBviwQAcXDdaztL75QVfkQQhgpsImX9canGRDj0A4EeE8GiLPBC6N9Gci1saxRWehcZ-voDaO-rI4YW0W8Rt1ObyrM2wMFdTdNPLAB1ZLWLUieGbx4zdBZjXxz8q3WrKfRfR3fG3Xnq51DCNwRvkhWyYHCkV2pcSdix1lJDA6qQ244nnJB8Der1LwY01OeTs8rIT793gALjjvxjYXzmTFoQeaMIrbGbmXHrH0zm-t_1cv7RWuCFyVeTerVNyyOS3IeIsvg00hIBLxga4njbpKYBRg=s903-no?authuser=0">
+  <!-- UIkit CSS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.0/dist/css/uikit.min.css" />
+
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.0/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.0/dist/js/uikit-icons.min.js"></script>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <style>
+    .box_image_phim {
+      width: 100%;
+      /* height: 250px; */
+      overflow: hidden;
+    }
+
+    .ten_phim_card {
+      padding: 5px 10px !important;
+      margin: 0;
+      font-size: 16px;
+      height: 45px;
+      overflow: hidden;
+    }
+
+    .box_item_phim {
+      cursor: pointer;
+      border-radius: 10px;
+      overflow: hidden;
+
+    }
+
+    .box_item_phim>div {
+      cursor: pointer;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 2px solid #6568a37d;
+      padding: 0px !important;
+      outline: none;
+    }
+
+    .box_item_phim>div:hover {
+      border: 2px solid #f9fd067d;
+    }
+
+    body::-webkit-scrollbar {
+      width: 0px;
+      background-color: #F5F5F5;
+    }
+
+    .box_item_phim img {
+      /* height: 400px; */
+      width: 100%;
+    }
+
+    .iframe_phim {
+      width: 900px;
+      max-width: 100%;
+      height: 500px;
+      cursor: none;
+      margin: 0 auto;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .singe_title_phim {
+      padding: 0;
+      margin: 20px;
+      text-align: center;
+      font-size: 25px;
+
+    }
+
+    .box_phim_content {
+      text-align: center;
+    }
+
+    /* body{
+    color: white;
+} */
+
+    body * {
+      font-family: 'Pacifico', cursive;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: 600;
+    }
+
+    .menu_header>ul {
+      display: flex;
+      list-style: none;
+      text-align: center;
+      align-items: flex-start;
+      justify-content: center;
+      position: fixed;
+      z-index: 999;
+      width: 100%;
+      background-color: rgb(133, 113, 126);
+      box-shadow: 0px 0px 3px white;
+      color: rgb(255, 255, 255);
+    }
+
+    .menu_header>ul>li {
+      margin: 15px 10px;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 600;
+
+    }
+
+    .loader {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: #1c1c1c;
+      z-index: 99999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .loader>img {
+      width: 400px;
+    }
+
+    .tite_home_category {
+      text-align: center;
+      /* color: white; */
+      text-transform: uppercase;
+      margin: 50px;
+      font-size: 30px;
+    }
+
+    #episode_list {
+      margin: 0 auto;
+      padding: 20px 0;
+      width: 904px;
+      max-width: 100%;
+      text-align: left;
+    }
+
+    #light_on {
+      display: none;
+    }
+
+    .hdev_dark {
+      background: #1c1c1c;
+      color: white;
+    }
+
+    .hdev_light {
+      background: white;
+      color: #1c1c1c;
+    }
+
+    .uk-notification-message {
+      z-index: 999999999999999999999999;
+    }
+  </style>
+
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+</style>
+
+<body class="preloading">
+
+  <dix class="loader">
+    <img src="https://i.pinimg.com/originals/d3/2e/14/d32e140fd8a232ff11ebc780cd437297.gif" alt="">
+ </dix>
+
+  <div class="content">
+
+    <header>
+      <nav class="menu_header">
+        <ul>
+          <li onclick="UIkit.notification({message: 'Đang tải chờ xíu nghen..', pos: 'bottom-right'})"
+            class="menu_item_click" mx-category="trangchu">Trang chủ</li>
+          <li onclick="UIkit.notification({message: 'Đang tải chờ xíu nghen..', pos: 'bottom-right'})"
+            class="menu_item_click" mx-category="phimbo">Phim bộ</li>
+          <li onclick="UIkit.notification({message: 'Đang tải chờ xíu nghen..', pos: 'bottom-right'})"
+            class="menu_item_click" mx-category="phimchieurap">Phim Chiếu Rạp</li>
+          <li onclick="UIkit.notification({message: 'Đang tải chờ xíu nghen..', pos: 'bottom-right'})"
+            class="menu_item_click" mx-category="phimhoathinh">Phim hoạt hình</li>
+          <li onclick="UIkit.notification({message: 'Đang tải chờ xíu nghen..', pos: 'bottom-right'})"
+            class="menu_item_click" mx-category="phimle">Phim lẻ</li>
+          <li>
+            <div id="light_box"></div>
+            <i id="light_off" class="far fa-lightbulb"></i>
+            <i id="light_on" class="fas fa-lightbulb"></i>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div style="padding: 40px;"></div>
+    <div id="page_singe_phim">
+
+    </div>
+
+    <div id="box_list_phim" class="uk-container uk-container-expand">
+      <div id="phimbo_render" class="uk-child-width-1-5@l uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid
+        uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 100; repeat: true">
+      </div>
+    </div>
+
+
+    <!-- UIkit JS -->
+
+
+    <script src="./renderer.js"></script>
+
+  </div>
+</body>
+
+</html>
